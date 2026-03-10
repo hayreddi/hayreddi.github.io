@@ -32,6 +32,16 @@ Hugo blog deployed to **https://hayreddi.github.io** via GitHub Pages + GitHub A
 4. Categories: **Pivot**, **Software Stack** (more may be added)
 5. Use Turkish characters (ç, ş, ğ, ı, ö, ü, İ, â) properly in Turkish content — never use ASCII-only approximations
 
+## Research Before Writing
+
+Before writing any blog post, always research the topic online first. Search for:
+- The latest developments, papers, and discussions on the subject (2025-2026)
+- Key people, frameworks, and prior art in the domain
+- Existing terminology — use established names rather than inventing new ones
+- Contrasting viewpoints and critiques
+
+Ground the post in real sources and include a `## References` table at the bottom with proper attribution. Never write a post based solely on internal knowledge — the goal is to reflect the current state of the field.
+
 ## Images
 
 - Generate images using `generate_images.py` which calls **Gemini Pro** (`gemini-3-pro-image-preview`)
