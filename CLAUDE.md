@@ -62,6 +62,10 @@ Site runs at http://localhost:1313. Has live reload.
 - Turkish lives under `/tr/` prefix
 - Menu items, descriptions, and all UI text must use native Turkish characters for the TR version
 
+## Memory
+
+When you notice a pattern, preference, or instruction that seems like it will be repeated across future sessions, proactively ask the user: *"Would you like me to save this to memory so I remember it next time?"* before persisting it. This includes things like workflow preferences, tool choices, naming conventions, or any recurring correction.
+
 ## Screenshots
 
 Use Playwright for taking browser screenshots when needed:
