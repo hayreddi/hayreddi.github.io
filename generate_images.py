@@ -4,7 +4,6 @@ import base64
 import json
 import logging
 import os
-import sys
 
 import boto3
 import httpx
@@ -99,11 +98,10 @@ async def generate_image(api_key: str, prompt: str, output_path: str) -> str:
     raise last_error or RuntimeError("Image generation failed")
 
 
-async def main():
-    api_key = load_gemini_api_key()
-    output_dir = "static/images/build-the-factory"
+# --- Image definitions per post ---
 
-    images = [
+POSTS = {
+    "build-the-factory": [
         {
             "filename": "craftsman-vs-factory.png",
             "prompt": (
@@ -146,20 +144,89 @@ async def main():
                 "No text. Clean, editorial, tech blog style. 16:9 aspect ratio."
             ),
         },
-    ]
+    ],
+    "spec-driven-development": [
+        {
+            "filename": "ottoman-court.png",
+            "prompt": (
+                "Create a wide cinematic illustration blending Ottoman Empire aesthetics with modern technology. "
+                "An ornate Ottoman council chamber (Divan) with arched doorways, mosaic tiles, and warm golden light — "
+                "but instead of human officials, the seats around the council table are occupied by "
+                "glowing AI avatars / holographic figures, each with a distinct role icon floating above them: "
+                "a crown (Grand Vizier/orchestrator), a quill (scribe/planner), a compass (architect), "
+                "a hammer (craftsman/builder), a magnifying glass (inspector/reviewer). "
+                "In the center of the table, floating YAML code scrolls glow like ancient decrees. "
+                "No text. Rich, editorial, tech blog style with Ottoman color palette (gold, deep blue, crimson). 16:9 aspect ratio."
+            ),
+        },
+        {
+            "filename": "contract-validation.png",
+            "prompt": (
+                "Create a wide cinematic illustration in a modern flat style with bold colors. "
+                "Show a conveyor belt carrying glowing document cards (representing agent outputs). "
+                "At a checkpoint gate, a stern robotic inspector with a magnifying glass examines each card "
+                "against a floating YAML schema blueprint. Cards that pass get a green checkmark stamp "
+                "and continue forward. Cards that fail get a red X and are sent back on a return conveyor. "
+                "The scene conveys automated quality control and contract validation. "
+                "No text. Clean, editorial, tech blog style. 16:9 aspect ratio."
+            ),
+        },
+        {
+            "filename": "vibes-vs-specs.png",
+            "prompt": (
+                "Create a wide cinematic illustration in a modern flat style with bold colors. "
+                "Split composition: on the left side, chaos — multiple AI agents running in different directions, "
+                "papers flying everywhere, confused speech bubbles, tangled connections between them, "
+                "a sign that is blurry and vague (representing vibes-based development). "
+                "On the right side, order — the same agents arranged in a clean pipeline, "
+                "connected by glowing contract documents, each agent handing validated output to the next, "
+                "a clear flow from start to finish (representing spec-driven development). "
+                "A glowing dividing line separates the two halves. "
+                "No text. Clean, editorial, tech blog style. 16:9 aspect ratio."
+            ),
+        },
+    ],
+}
 
-    tasks = []
-    for img in images:
-        path = os.path.join(output_dir, img["filename"])
-        tasks.append(generate_image(api_key, img["prompt"], path))
 
-    results = await asyncio.gather(*tasks, return_exceptions=True)
+async def main():
+    import sys
 
-    for img, result in zip(images, results):
-        if isinstance(result, Exception):
-            logger.error(f"Failed to generate {img['filename']}: {result}")
-        else:
-            logger.info(f"Success: {result}")
+    api_key = load_gemini_api_key()
+
+    # Allow specifying which post to generate for
+    post_slug = sys.argv[1] if len(sys.argv) > 1 else None
+
+    if post_slug and post_slug not in POSTS:
+        print(f"Unknown post: {post_slug}")
+        print(f"Available: {', '.join(POSTS.keys())}")
+        sys.exit(1)
+
+    posts_to_generate = {post_slug: POSTS[post_slug]} if post_slug else POSTS
+
+    for slug, images in posts_to_generate.items():
+        output_dir = f"static/images/{slug}"
+        os.makedirs(output_dir, exist_ok=True)
+
+        # Skip if all images already exist
+        missing = [img for img in images if not os.path.exists(os.path.join(output_dir, img["filename"]))]
+        if not missing:
+            logger.info(f"All images for '{slug}' already exist, skipping")
+            continue
+
+        logger.info(f"Generating {len(missing)} images for '{slug}'...")
+        tasks = []
+        for img in missing:
+            path = os.path.join(output_dir, img["filename"])
+            tasks.append(generate_image(api_key, img["prompt"], path))
+
+        results = await asyncio.gather(*tasks, return_exceptions=True)
+
+        for img, result in zip(missing, results):
+            if isinstance(result, Exception):
+                logger.error(f"Failed to generate {img['filename']}: {result}")
+            else:
+                logger.info(f"Success: {result}")
 
 
 if __name__ == "__main__":
