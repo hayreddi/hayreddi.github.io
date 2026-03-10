@@ -1,11 +1,11 @@
 baseURL = "https://hayreddi.github.io/"
-languageCode = "en-us"
 title = "Hayreddi"
 theme = "PaperMod"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
 
 [params]
   author = "Hayreddi"
-  description = "Exploring AI's impact on work, startups, and the future of humanity"
   ShowReadingTime = true
   ShowShareButtons = true
   ShowPostNavLinks = true
@@ -13,30 +13,83 @@ theme = "PaperMod"
   ShowCodeCopyButtons = true
   ShowToc = true
 
-[params.homeInfoParams]
-  Title = "Welcome"
-  Content = "Exploring AI's impact on work, startups, and the future of humanity."
-
 [[params.socialIcons]]
   name = "github"
   url = "https://github.com/hayreddi"
 
-[menu]
-[[menu.main]]
-  identifier = "archive"
-  name = "Archive"
-  url = "/archives/"
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# --- English ---
+[languages.en]
+  languageName = "English"
+  weight = 1
+  languageCode = "en"
+  contentDir = "content/en"
+
+[languages.en.params]
+  description = "Exploring AI's impact on work, startups, and the future of humanity"
+
+[languages.en.params.homeInfoParams]
+  Title = "Welcome"
+  Content = "Exploring AI's impact on work, startups, and the future of humanity."
+
+[[languages.en.menu.main]]
+  identifier = "categories"
+  name = "Categories"
+  url = "/categories/"
   weight = 5
-[[menu.main]]
+[[languages.en.menu.main]]
   identifier = "tags"
   name = "Tags"
   url = "/tags/"
   weight = 10
-[[menu.main]]
+[[languages.en.menu.main]]
+  identifier = "archive"
+  name = "Archive"
+  url = "/archives/"
+  weight = 15
+[[languages.en.menu.main]]
   identifier = "search"
   name = "Search"
   url = "/search/"
-  weight = 15
+  weight = 20
 
-[outputs]
-  home = ["HTML", "RSS", "JSON"]
+# --- Turkish ---
+[languages.tr]
+  languageName = "Türkçe"
+  weight = 2
+  languageCode = "tr"
+  contentDir = "content/tr"
+
+[languages.tr.params]
+  description = "Yapay zekânın iş, girişimcilik ve insanlığın geleceğine etkisini keşfetmek"
+
+[languages.tr.params.homeInfoParams]
+  Title = "Hoş Geldiniz"
+  Content = "Yapay zekânın iş, girişimcilik ve insanlığın geleceğine etkisini keşfetmek."
+
+[[languages.tr.menu.main]]
+  identifier = "categories"
+  name = "Kategoriler"
+  url = "/tr/categories/"
+  weight = 5
+[[languages.tr.menu.main]]
+  identifier = "tags"
+  name = "Etiketler"
+  url = "/tr/tags/"
+  weight = 10
+[[languages.tr.menu.main]]
+  identifier = "archive"
+  name = "Arşiv"
+  url = "/tr/archives/"
+  weight = 15
+[[languages.tr.menu.main]]
+  identifier = "search"
+  name = "Ara"
+  url = "/tr/search/"
+  weight = 20

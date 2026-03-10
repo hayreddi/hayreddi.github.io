@@ -2,6 +2,7 @@
 title: "Hello World"
 date: 2026-03-10
 draft: false
+categories: ["Pivot"]
 tags: ["meta"]
 summary: "First post — why I started this blog."
 ---
