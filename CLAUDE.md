@@ -30,7 +30,8 @@ Hugo blog deployed to **https://hayreddi.github.io** via GitHub Pages + GitHub A
    ---
    ```
 4. Categories: **Pivot**, **Software Stack** (more may be added)
-5. Use Turkish characters (ç, ş, ğ, ı, ö, ü, İ, â) properly in Turkish content — never use ASCII-only approximations
+5. Use Turkish characters (ç, ş, ğ, ı, ö, ü, İ, â) properly in Turkish content, never use ASCII-only approximations
+6. **Never use em dashes (—) in blog posts.** Use commas, periods, colons, or rephrase instead.
 
 ## Research Before Writing
 

@@ -145,6 +145,51 @@ POSTS = {
             ),
         },
     ],
+    "tdd-for-agentic-workflows": [
+        {
+            "filename": "agentic-codebase.png",
+            "prompt": (
+                "A simple, hand-drawn style whiteboard sketch on a plain white background. "
+                "Four boxes arranged in a square: 'Tests' (top-left, with a checkmark), "
+                "'Prompts' (top-right, with a chat bubble), 'Tools' (bottom-left, with a wrench), "
+                "'Orchestrator' (bottom-right, with arrows connecting to the other three). "
+                "Drawn with a black marker, slightly imperfect lines, like a real whiteboard diagram. "
+                "Minimal, no decoration, no gradients, no color except maybe a single red circle "
+                "around the word 'Tests' to emphasize it. "
+                "The kind of sketch a senior engineer draws in a meeting to explain the whole system in 30 seconds. "
+                "No text labels other than the four box names. 16:9 aspect ratio."
+            ),
+        },
+        {
+            "filename": "ground-truth-loop.png",
+            "prompt": (
+                "A simple, hand-drawn style diagram on a plain white background. "
+                "A circular loop with five steps drawn as rough boxes connected by arrows: "
+                "Run → Measure → Analyze Failures → Refine → back to Run. "
+                "In the center of the loop, a simple table icon representing a dataset "
+                "with rows of checkmarks and X marks (ground truth). "
+                "Below the loop, a simple bar chart showing precision and recall bars "
+                "getting taller with each iteration, approaching 100%. "
+                "Black marker on white, slightly messy handwriting style, "
+                "like a sketch on paper during a brainstorming session. "
+                "No decoration, no gradients. 16:9 aspect ratio."
+            ),
+        },
+        {
+            "filename": "tests-vs-code.png",
+            "prompt": (
+                "A simple, hand-drawn style comparison sketch on a plain white background. "
+                "Left side: a tall, messy stack of papers/documents labeled with tiny scribbles, "
+                "representing a traditional codebase with layers upon layers (frameworks, services, ORM, glue code). "
+                "Right side: a short, clean stack of just four thin papers, "
+                "representing the agentic codebase (tests, prompts, tools, config). "
+                "A simple bracket or arrow pointing to the right stack. "
+                "Black marker on white, rough sketch style, like a napkin drawing at a coffee shop. "
+                "No color except the right stack might have a slight green highlight. "
+                "No fancy rendering. Authentic and minimal. 16:9 aspect ratio."
+            ),
+        },
+    ],
     "spec-driven-development": [
         {
             "filename": "ottoman-court.png",
