@@ -243,12 +243,12 @@ Start simple. Stay simple. Add complexity only when the tests demand it.
 
 | Source | Description |
 |---|---|
-| Anthropic, *Building Effective Agents* (2024) | "Find the simplest solution possible, and only increase complexity when needed" |
-| Anthropic, *SWE-bench Sonnet* | Agent evaluation: testing the model + scaffolding as a unit |
-| Simon Willison, *AI Agents* (2025) | "LLMs calling tools in a loop to achieve a goal," simplicity as architecture |
-| Hamel Husain, *Your AI Product Needs Evals* | Three-level eval framework: unit tests → human review → A/B testing |
-| LangSmith, *Evaluation Concepts* | Testing tool selection, argument formatting, and agent trajectory |
-| Tobi Lutke / Drew Breunig, *Context Engineering* (2025) | Managing context windows: poisoning, distraction, confusion, clash |
+| [Anthropic, *Building Effective Agents*](https://www.anthropic.com/engineering/building-effective-agents) | "Find the simplest solution possible, and only increase complexity when needed" |
+| [Anthropic, *SWE-bench Sonnet*](https://www.anthropic.com/engineering/swe-bench-sonnet) | Agent evaluation: testing the model + scaffolding as a unit |
+| [Simon Willison, *AI Agents*](https://simonwillison.net/tags/agents/) | "LLMs calling tools in a loop to achieve a goal," simplicity as architecture |
+| [Hamel Husain, *Your AI Product Needs Evals*](https://hamel.dev/blog/posts/evals/) | Three-level eval framework: unit tests → human review → A/B testing |
+| [LangSmith, *Evaluation Concepts*](https://docs.smith.langchain.com/evaluation/concepts) | Testing tool selection, argument formatting, and agent trajectory |
+| [Drew Breunig, *How Long Contexts Fail*](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html) | Context failure modes: poisoning, distraction, confusion, clash |
 | Kent Beck, *Test-Driven Development* (2003) | The original Red → Green → Refactor cycle |
-| Kiro (kiro.dev), *Spec-Driven Agentic IDE* (2025) | Requirements → Design → Implementation with iterative agent loops |
+| [Kiro](https://kiro.dev) | Spec-driven agentic IDE: requirements → design → implementation with iterative agent loops |
 | [divan-agents](https://github.com/hayreddi/divan-agents) | Spec-driven multi-agent orchestration with YAML contracts |

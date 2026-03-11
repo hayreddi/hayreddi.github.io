@@ -229,9 +229,9 @@ Just don't try to rename the agents. The Grand Vizier will not approve.
 | Source | Description |
 |---|---|
 | Bertrand Meyer, *Object-Oriented Software Construction* (1988) | Design by Contract: preconditions, postconditions, invariants |
-| Swagger/OpenAPI, *Adopting an API-First Approach* | API-first development principles and benefits |
-| Ian Robinson, *Consumer-Driven Contracts* (martinfowler.com) | Contracts derived from consumer expectations |
-| Pact Foundation, *What Is Contract Testing?* (pactflow.io) | Machine-verifiable contracts between services |
-| Tobi Lutke / Simon Willison / Drew Breunig, *Context Engineering* (2025) | Managing AI context windows: poisoning, distraction, confusion, clash |
+| [Swagger/OpenAPI, *Adopting an API-First Approach*](https://swagger.io/resources/articles/adopting-an-api-first-approach/) | API-first development principles and benefits |
+| [Ian Robinson, *Consumer-Driven Contracts*](https://martinfowler.com/articles/consumerDrivenContracts.html) | Contracts derived from consumer expectations |
+| [Pact Foundation, *Introduction to Contract Testing*](https://docs.pact.io/) | Machine-verifiable contracts between services |
+| [Drew Breunig, *How Long Contexts Fail*](https://www.dbreunig.com/2025/06/22/how-contexts-fail-and-how-to-fix-them.html) | Context failure modes: poisoning, distraction, confusion, clash |
 | Cem Kaner et al., *Context-Driven Testing* | "The value of any practice depends on its context" |
 | [divan-agents](https://github.com/hayreddi/divan-agents) | Open-source spec-driven multi-agent orchestration framework |
